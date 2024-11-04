@@ -1,0 +1,82 @@
+// styles.scss
+
+ion-input {
+    font-size: 1.2rem; // Adjusted font size for better readability
+    color: #333; // Input text color
+  }
+
+  ion-item {
+    --background: #f1f1f1; // Background color for the input items
+    border-radius: 10px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); // Subtle shadow for depth
+  }
+
+  .header {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    text-align: center;
+
+    .subtitle {
+      color: gray;
+      font-size: 0.9rem;
+      margin-top: 5px; // Added margin for spacing
+    }
+
+    ion-title {
+      font-size: 2rem;
+      font-weight: bold; // Bold title for emphasis
+      color: #333; // Title color
+    }
+  }
+
+  .sl {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    align-content: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    right: 0;
+    margin-bottom: 30px;
+    justify-content: center;
+
+    p {
+      font-size: 0.9rem;
+      color: #666; // Subtle color for paragraph text
+    }
+
+    a {
+      text-decoration: none;
+      color: #ff3b30; // Use a consistent accent color for links
+      transition: color 0.2s; // Smooth transition for hover effect
+
+      &:hover {
+        color: #ff2a20; // Darker shade on hover
+      }
+    }
+  }
+
+  .fp {
+    justify-content: flex-end;
+
+    a {
+      font-weight: 400;
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: #007bff; // Standard link color
+
+      &:hover {
+        text-decoration: underline; // Underline on hover for better UX
+        color: #0056b3; // Darker shade on hover
+      }
+    }
+  }
+
+  .error-message {
+    color: #d9534f; // Bootstrap danger color for error messages
+    font-size: 0.8rem; // Smaller font size for error text
+    margin-top: 5px; // Space above the error messages
+  }

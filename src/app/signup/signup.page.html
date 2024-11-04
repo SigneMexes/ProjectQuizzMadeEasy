@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title> Welcome</ion-title>
+    <p class="subtitle">Sign in to create your account</p>
+  </div>
+
+  <form [formGroup]="regForm" novalidate>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input formControlName="fullname" placeholder="Create a User Name"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="regForm.get('fullname').invalid && (regForm.get('fullname').dirty || regForm.get('fullname').touched)" class="error-message">
+        <p *ngIf="regForm.get('fullname').errors.required">Username is required.</p>
+        <p *ngIf="regForm.get('fullname').errors.minlength">Username must be at least {{ regForm.get('fullname').errors.minlength.requiredLength }} characters long.</p>
+      </div>
+
+      <ion-item>
+        <ion-input formControlName="email" placeholder="Enter your Email"></ion-input>
+        <ion-icon name="mail-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="regForm.get('email').invalid && (regForm.get('email').dirty || regForm.get('email').touched)" class="error-message">
+        <p *ngIf="regForm.get('email').errors.required">Email is required.</p>
+        <p *ngIf="regForm.get('email').errors.email">Please enter a valid email address.</p>
+      </div>
+
+      <ion-item>
+        <ion-input type="password" formControlName="password" placeholder="Create a Password"></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="regForm.get('password').invalid && (regForm.get('password').dirty || regForm.get('password').touched)" class="error-message">
+        <p *ngIf="regForm.get('password').errors.required">Password is required.</p>
+        <p *ngIf="regForm.get('password').errors.minlength">Password must be at least {{ regForm.get('password').errors.minlength.requiredLength }} characters long.</p>
+      </div>
+
+      <div class="sl">
+        <p> Have an account? <a [routerLink]="['/login']" class="log">Login</a></p>
+      </div>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" style="margin-bottom:30px">
+      <ion-fab-button color="danger" (click)="signUp()" [disabled]="regForm.invalid">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>

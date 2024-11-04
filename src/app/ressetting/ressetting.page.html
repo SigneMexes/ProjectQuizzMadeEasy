@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title>Enter your Email</ion-title>
+    <p class="subtitle">To receive your password reset link</p>
+  </div>
+
+  <form style="margin: 0 15px">
+    <ion-item>
+      <ion-input name="email" [(ngModel)]="email" type="email" placeholder="Enter your email" ></ion-input>
+      <ion-icon name="mail-outline"></ion-icon>
+    </ion-item>
+  </form>
+
+  <ion-fab vertical="bottom" horizontal="end" style="margin-bottom:30px">
+    <ion-fab-button color="danger" (click)="resetPassword()">
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

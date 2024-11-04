@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title> Welcome Back</ion-title>
+    <p class="subtitle">Sign in to access your account</p>
+  </div>
+
+  <form [formGroup]="loginForm">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input formControlName="email" placeholder="Email"></ion-input>
+        <ion-icon name="mail-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)" class="error-message">
+        <p *ngIf="loginForm.get('email').errors.required">Email is required.</p>
+        <p *ngIf="loginForm.get('email').errors.email">Please enter a valid email address.</p>
+      </div>
+
+      <ion-item>
+        <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item>
+      <div *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)" class="error-message">
+        <p *ngIf="loginForm.get('password').errors.required">Password is required.</p>
+      </div>
+
+      <div class="fp">
+        <a [routerLink]="['/ressetting']">Forgot password?</a>
+      </div>
+      <div class="sl">
+        <p>Don't have an account? <a [routerLink]="['/signup']">Sign up Now</a></p>
+      </div>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" style="margin-bottom:30px">
+      <ion-fab-button color="danger" (click)="login()" [disabled]="loginForm.invalid">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>

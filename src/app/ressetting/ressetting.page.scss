@@ -1,0 +1,30 @@
+
+ion-input {
+    font-size: 1.2rem; // Adjusted font size for better readability
+    color: #333; // Input text color
+  }
+
+  ion-item {
+    --background: #f1f1f1; // Background color for the input items
+    border-radius: 10px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); // Subtle shadow for depth
+  }
+
+  .header {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    text-align: center;
+
+    .subtitle {
+      color: gray;
+      font-size: 0.9rem;
+      margin-top: 5px; // Added margin for spacing
+    }
+
+    ion-title {
+      font-size: 2rem;
+      font-weight: bold; // Bold title for emphasis
+      color: #333; // Title color
+    }
+  }
